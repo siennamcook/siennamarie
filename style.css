@@ -46,7 +46,6 @@ nav {
 /* Hero */
 
 .hero {
-  position: relative;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -56,20 +55,6 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero-text {
-  position: absolute;
-  left: 34px;
-  bottom: 30px;
-  color: white;
-}
-
-.hero-text p {
-  margin: 0;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
 
 /* Intro */
@@ -93,10 +78,6 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px;
-}
-
-.project {
-  position: relative;
 }
 
 .project-large {
@@ -159,6 +140,12 @@ nav {
 
   nav {
     gap: 14px;
+  }
+
+  .logo,
+  nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 
   .intro {
