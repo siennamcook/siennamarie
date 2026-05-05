@@ -3,56 +3,224 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Sienna Marie Interior Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f6f3ee;
+      color: #111;
+      font-weight: 300;
+    }
+
+    nav {
+      position: fixed;
+      top: 26px;
+      right: 32px;
+      z-index: 100;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #111;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      min-height: 100vh;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .intro h1 {
+      margin: 0;
+      max-width: 950px;
+      font-size: clamp(58px, 11vw, 160px);
+      line-height: 0.9;
+      letter-spacing: -7px;
+      font-weight: 300;
+    }
+
+    .about {
+      padding: 10vh 32px 18vh;
+      max-width: 760px;
+    }
+
+    .about p {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .work {
+      padding: 10vh 32px 20vh;
+    }
+
+    .work img {
+      display: block;
+      height: auto;
+      filter: grayscale(100%) brightness(0.82);
+      opacity: 0.38;
+      transition: filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .work img.active {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+      transform: scale(1.025);
+    }
+
+    .img1 { width: 26%; margin-left: 8%; margin-bottom: 260px; }
+    .img2 { width: 20%; margin-left: auto; margin-right: 14%; margin-bottom: 310px; }
+    .img3 { width: 32%; margin-left: 46%; margin-bottom: 250px; }
+    .img4 { width: 18%; margin-left: 18%; margin-bottom: 350px; }
+    .img5 { width: 28%; margin-left: auto; margin-right: 8%; margin-bottom: 280px; }
+    .img6 { width: 22%; margin-left: 36%; margin-bottom: 330px; }
+    .img7 { width: 34%; margin-left: 5%; margin-bottom: 250px; }
+    .img8 { width: 20%; margin-left: auto; margin-right: 24%; margin-bottom: 330px; }
+    .img9 { width: 30%; margin-left: 50%; }
+
+    .contact {
+      padding: 90px 32px 70px;
+      border-top: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .contact p {
+      margin: 0 0 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contact a {
+      display: block;
+      color: #111;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        top: 22px;
+        right: 22px;
+      }
+
+      nav a {
+        margin-left: 14px;
+        font-size: 10px;
+      }
+
+      .intro {
+        padding: 24px;
+      }
+
+      .intro h1 {
+        font-size: 64px;
+        letter-spacing: -3px;
+      }
+
+      .about {
+        padding: 8vh 24px 12vh;
+      }
+
+      .about p {
+        font-size: 34px;
+      }
+
+      .work {
+        padding: 6vh 24px 12vh;
+      }
+
+      .work img {
+        width: 70% !important;
+        margin-bottom: 120px !important;
+      }
+
+      .work img:nth-child(odd) {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+
+      .work img:nth-child(even) {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="nav">
+  <nav>
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
-  </header>
+  </nav>
 
-  <main>
+  <section class="intro">
+    <h1>Sienna Marie Interior Design</h1>
+  </section>
 
-    <section class="hero">
-      <p>Sienna Marie Interior Design</p>
-    </section>
+  <section class="about" id="about">
+    <p>
+      Residential interiors shaped by light, material restraint and considered detail.
+    </p>
+  </section>
 
-    <section class="about" id="about">
-      <p>
-        Residential interiors shaped by light, material restraint and considered detail.
-      </p>
-    </section>
+  <section class="work" id="work">
+    <img class="gallery-img img1" src="hero.JPG" alt="">
+    <img class="gallery-img img2" src="img1.JPG" alt="">
+    <img class="gallery-img img3" src="img2.JPG" alt="">
+    <img class="gallery-img img4" src="img3.JPG" alt="">
+    <img class="gallery-img img5" src="img4.JPG" alt="">
+    <img class="gallery-img img6" src="img5.JPG" alt="">
+    <img class="gallery-img img7" src="img6.JPG" alt="">
+    <img class="gallery-img img8" src="img7.JPG" alt="">
+    <img class="gallery-img img9" src="img8.JPG" alt="">
+  </section>
 
-    <section class="work" id="work">
-      <img class="gallery-img img1" src="hero.JPG" alt="">
-      <img class="gallery-img img2" src="img1.JPG" alt="">
-      <img class="gallery-img img3" src="img2.JPG" alt="">
-      <img class="gallery-img img4" src="img3.JPG" alt="">
-      <img class="gallery-img img5" src="img4.JPG" alt="">
-      <img class="gallery-img img6" src="img5.JPG" alt="">
-      <img class="gallery-img img7" src="img6.JPG" alt="">
-      <img class="gallery-img img8" src="img7.JPG" alt="">
-      <img class="gallery-img img9" src="img8.JPG" alt="">
-    </section>
+  <section class="contact" id="contact">
+    <p>For project enquiries</p>
+    <a href="mailto:siennacmarie@gmail.com">siennacmarie@gmail.com</a>
+    <a href="tel:+64223597311">+64 22 359 7311</a>
+  </section>
 
-    <section class="contact" id="contact">
-      <p>For project enquiries</p>
-      <a href="mailto:siennacmarie@gmail.com">siennacmarie@gmail.com</a>
-      <a href="tel:+64223597311">+64 22 359 7311</a>
-    </section>
+  <script>
+    const images = document.querySelectorAll('.gallery-img');
 
-  </main>
+    function updateImages() {
+      const center = window.innerHeight / 2;
 
-  <script src="script.js"></script>
+      images.forEach((img) => {
+        const rect = img.getBoundingClientRect();
+        const imgCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(center - imgCenter);
+
+        if (distance < window.innerHeight * 0.22) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateImages);
+    window.addEventListener('resize', updateImages);
+    window.addEventListener('load', updateImages);
+  </script>
+
 </body>
 </html>
