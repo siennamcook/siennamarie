@@ -83,7 +83,7 @@ nav a {
 }
 
 .about-copy p {
-  margin: 0 0 26px;
+  margin: 0 0 22px;
   font-size: 16px;
   line-height: 1.7;
 }
@@ -115,12 +115,11 @@ nav a {
   z-index: 3;
   display: block;
   filter: grayscale(1);
-  transition: filter 1.2s ease, transform 1.2s ease;
+  transition: transform 0.8s ease;
 }
 
 .work img.active {
-  filter: grayscale(0);
-  transform: scale(1.015);
+  transform: scale(1.008);
 }
 
 /* DESKTOP SPACING */
@@ -169,8 +168,7 @@ nav a {
   .intro {
     min-height: 78vh;
     padding: 24px;
-    align-items: flex-end;
-    padding-bottom: 90px;
+    align-items: center;
   }
 
   .hero-text h1 {
@@ -260,8 +258,6 @@ nav a {
     <p>Her work is grounded in atmosphere, with a focus on light, proportion and material restraint. She is interested in how spaces are experienced day to day — how they feel, move and settle over time.</p>
 
     <p>Her experience spans residential projects, bespoke furniture and interior styling, informing a well-rounded and hands-on approach to design. She works in a considered and detail-driven way, balancing clarity with warmth.</p>
-
-    <p>She is particularly interested in creating a sense of refinement within smaller footprints, using simple moves and thoughtful detailing to achieve spaces that feel calm, cohesive and quietly resolved.</p>
   </div>
 </section>
 
@@ -296,7 +292,11 @@ function updateImages() {
     const imgCenter = rect.top + rect.height / 2;
     const distance = Math.abs(center - imgCenter);
 
-    if (distance < window.innerHeight * 0.2) {
+    const ratio = Math.max(0, Math.min(1, 1 - distance / (window.innerHeight * 0.4)));
+
+    img.style.filter = `grayscale(${1 - ratio})`;
+
+    if (ratio > 0.75) {
       img.classList.add('active');
     } else {
       img.classList.remove('active');
@@ -305,6 +305,7 @@ function updateImages() {
 }
 
 window.addEventListener('scroll', updateImages);
+window.addEventListener('resize', updateImages);
 window.addEventListener('load', updateImages);
 </script>
 
