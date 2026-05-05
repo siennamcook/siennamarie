@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Sienna Marie Interior Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,63 +78,68 @@
       margin: 0 0 24px;
       font-size: 16px;
       line-height: 1.65;
-      font-weight: 300;
+    }
+
+    /* 🔥 FIXED BACKGROUND TEXT */
+    .work-bg-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+
+      font-size: clamp(90px, 14vw, 240px);
+      line-height: 0.85;
+      letter-spacing: -10px;
+      font-weight: 200;
+
+      color: rgba(0, 0, 0, 0.05);
+
+      pointer-events: none;
+      white-space: nowrap;
     }
 
     .work {
       position: relative;
       padding: 8vh 32px 20vh;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .work-bg-text {
-      position: sticky;
-      top: 42vh;
-      z-index: 0;
-      margin: 0 0 -120px;
-      text-align: center;
-      font-size: clamp(82px, 14vw, 230px);
-      line-height: 0.85;
-      letter-spacing: -10px;
-      font-weight: 200;
-      color: rgba(0, 0, 0, 0.055);
-      pointer-events: none;
-      white-space: nowrap;
+      z-index: 2;
     }
 
     .work img {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       display: block;
       height: auto;
+
       filter: grayscale(100%) brightness(0.82);
       opacity: 0.42;
-      transition: filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+
+      transition: all 0.7s ease;
     }
 
     .work img.active {
       filter: grayscale(0%) brightness(1);
       opacity: 1;
-      transform: scale(1.025);
+      transform: scale(1.03);
     }
 
-    .img1 { width: 48%; margin-left: 3%; margin-bottom: 190px; }
-    .img2 { width: 34%; margin-left: auto; margin-right: 15%; margin-bottom: 310px; }
-    .img3 { width: 52%; margin-left: 39%; margin-bottom: 145px; }
-    .img4 { width: 30%; margin-left: 10%; margin-bottom: 360px; }
-    .img5 { width: 46%; margin-left: auto; margin-right: 3%; margin-bottom: 210px; }
-    .img6 { width: 38%; margin-left: 27%; margin-bottom: 285px; }
-    .img7 { width: 56%; margin-left: 0; margin-bottom: 160px; }
-    .img8 { width: 32%; margin-left: auto; margin-right: 24%; margin-bottom: 340px; }
-    .img9 { width: 50%; margin-left: 46%; }
+    /* 🔥 BIGGER + MORE RANDOM */
+    .img1 { width: 52%; margin-left: 4%; margin-bottom: 220px; }
+    .img2 { width: 42%; margin-left: auto; margin-right: 10%; margin-bottom: 300px; }
+    .img3 { width: 58%; margin-left: 34%; margin-bottom: 180px; }
+    .img4 { width: 36%; margin-left: 12%; margin-bottom: 340px; }
+    .img5 { width: 54%; margin-left: auto; margin-right: 4%; margin-bottom: 200px; }
+    .img6 { width: 46%; margin-left: 26%; margin-bottom: 300px; }
+    .img7 { width: 60%; margin-left: 3%; margin-bottom: 170px; }
+    .img8 { width: 40%; margin-left: auto; margin-right: 18%; margin-bottom: 330px; }
+    .img9 { width: 56%; margin-left: 42%; }
 
     .contact {
       padding: 90px 32px 70px;
       border-top: 1px solid rgba(0,0,0,0.12);
-      position: relative;
-      z-index: 5;
       background: #f6f3ee;
+      z-index: 5;
+      position: relative;
     }
 
     .contact p {
@@ -143,7 +147,6 @@
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      font-weight: 300;
     }
 
     .contact a {
@@ -152,7 +155,6 @@
       text-decoration: none;
       font-size: 20px;
       line-height: 1.5;
-      font-weight: 300;
     }
 
     @media (max-width: 800px) {
@@ -166,57 +168,41 @@
         font-size: 10px;
       }
 
-      .intro {
-        padding: 24px;
-      }
-
       .intro h1 {
         font-size: 64px;
         letter-spacing: -3px;
       }
 
       .about {
-        padding: 8vh 24px 12vh;
         display: block;
+        padding: 8vh 24px;
       }
 
       .about h2 {
         font-size: 38px;
-        letter-spacing: -1.6px;
-        margin-bottom: 34px;
-      }
-
-      .about-copy p {
-        font-size: 15px;
+        margin-bottom: 30px;
       }
 
       .work {
-        padding: 6vh 24px 12vh;
-      }
-
-      .work-bg-text {
-        top: 43vh;
-        font-size: 78px;
-        letter-spacing: -4px;
-        margin-bottom: -60px;
+        padding: 6vh 24px;
       }
 
       .work img {
-        width: 86% !important;
+        width: 88% !important;
+        margin-bottom: 120px !important;
       }
 
-      .work img:nth-of-type(1) { margin-left: 0 !important; margin-bottom: 100px !important; }
-      .work img:nth-of-type(2) { margin-left: auto !important; margin-bottom: 155px !important; }
-      .work img:nth-of-type(3) { margin-left: 8% !important; margin-bottom: 80px !important; }
-      .work img:nth-of-type(4) { margin-left: auto !important; margin-bottom: 170px !important; }
-      .work img:nth-of-type(5) { margin-left: 0 !important; margin-bottom: 115px !important; }
-      .work img:nth-of-type(6) { margin-left: auto !important; margin-bottom: 150px !important; }
-      .work img:nth-of-type(7) { margin-left: 4% !important; margin-bottom: 90px !important; }
-      .work img:nth-of-type(8) { margin-left: auto !important; margin-bottom: 165px !important; }
-      .work img:nth-of-type(9) { margin-left: 0 !important; }
+      .work img:nth-child(odd) {
+        margin-left: 0 !important;
+      }
 
-      .contact {
-        padding: 70px 24px;
+      .work img:nth-child(even) {
+        margin-left: auto !important;
+      }
+
+      .work-bg-text {
+        font-size: 80px;
+        letter-spacing: -4px;
       }
     }
   </style>
@@ -254,18 +240,19 @@
     </div>
   </section>
 
-  <section class="work" id="work">
-    <div class="work-bg-text">Sienna Marie</div>
+  <!-- 🔥 FIXED TEXT OUTSIDE WORK -->
+  <div class="work-bg-text">Sienna Marie</div>
 
-    <img class="gallery-img img1" src="hero.JPG" alt="">
-    <img class="gallery-img img2" src="img1.JPG" alt="">
-    <img class="gallery-img img3" src="img2.JPG" alt="">
-    <img class="gallery-img img4" src="img3.JPG" alt="">
-    <img class="gallery-img img5" src="img4.JPG" alt="">
-    <img class="gallery-img img6" src="img5.JPG" alt="">
-    <img class="gallery-img img7" src="img6.JPG" alt="">
-    <img class="gallery-img img8" src="img7.JPG" alt="">
-    <img class="gallery-img img9" src="img8.JPG" alt="">
+  <section class="work" id="work">
+    <img class="gallery-img img1" src="hero.JPG">
+    <img class="gallery-img img2" src="img1.JPG">
+    <img class="gallery-img img3" src="img2.JPG">
+    <img class="gallery-img img4" src="img3.JPG">
+    <img class="gallery-img img5" src="img4.JPG">
+    <img class="gallery-img img6" src="img5.JPG">
+    <img class="gallery-img img7" src="img6.JPG">
+    <img class="gallery-img img8" src="img7.JPG">
+    <img class="gallery-img img9" src="img8.JPG">
   </section>
 
   <section class="contact" id="contact">
@@ -294,7 +281,6 @@
     }
 
     window.addEventListener('scroll', updateImages);
-    window.addEventListener('resize', updateImages);
     window.addEventListener('load', updateImages);
   </script>
 
