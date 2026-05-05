@@ -108,15 +108,6 @@
       z-index: 3;
       display: block;
       height: auto;
-      filter: grayscale(100%) brightness(0.82);
-      opacity: 0.42;
-      transition: all 0.7s ease;
-    }
-
-    .work img.active {
-      filter: grayscale(0%) brightness(1);
-      opacity: 1;
-      transform: scale(1.03);
     }
 
     .img1 { width: 52%; margin-left: 4%; margin-bottom: 220px; }
@@ -252,15 +243,15 @@
   <section class="work" id="work">
     <div class="work-bg-text">Sienna Marie</div>
 
-    <img class="gallery-img img1" src="hero.JPG">
-    <img class="gallery-img img2" src="img1.JPG">
-    <img class="gallery-img img3" src="img2.JPG">
-    <img class="gallery-img img4" src="img3.JPG">
-    <img class="gallery-img img5" src="img4.JPG">
-    <img class="gallery-img img6" src="img5.JPG">
-    <img class="gallery-img img7" src="img6.JPG">
-    <img class="gallery-img img8" src="img7.JPG">
-    <img class="gallery-img img9" src="img8.JPG">
+    <img class="img1" src="hero.JPG" alt="">
+    <img class="img2" src="img1.JPG" alt="">
+    <img class="img3" src="img2.JPG" alt="">
+    <img class="img4" src="img3.JPG" alt="">
+    <img class="img5" src="img4.JPG" alt="">
+    <img class="img6" src="img5.JPG" alt="">
+    <img class="img7" src="img6.JPG" alt="">
+    <img class="img8" src="img7.JPG" alt="">
+    <img class="img9" src="img8.JPG" alt="">
   </section>
 
   <section class="contact" id="contact">
@@ -268,30 +259,6 @@
     <a href="mailto:siennacmarie@gmail.com">siennacmarie@gmail.com</a>
     <a href="tel:+64223597311">+64 22 359 7311</a>
   </section>
-
-  <script>
-    const images = document.querySelectorAll('.gallery-img');
-
-    function updateImages() {
-      const center = window.innerHeight / 2;
-
-      images.forEach((img) => {
-        const rect = img.getBoundingClientRect();
-        const imgCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(center - imgCenter);
-
-        if (distance < window.innerHeight * 0.24) {
-          img.classList.add('active');
-        } else {
-          img.classList.remove('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateImages);
-    window.addEventListener('resize', updateImages);
-    window.addEventListener('load', updateImages);
-  </script>
 
 </body>
 </html>
