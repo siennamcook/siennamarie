@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sienna Marie Interior Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 
   <style>
@@ -100,14 +99,14 @@
       display: block;
       height: auto;
 
-      /* 🔥 softer grayscale */
-      filter: grayscale(100%) saturate(80%);
-      transition: filter 1.2s ease, transform 1.2s ease;
+      /* 🔥 THIS is the black & white effect */
+      filter: grayscale(100%);
+      transition: filter 1s ease, transform 1s ease;
     }
 
     .work img.active {
-      filter: grayscale(0%) saturate(105%);
-      transform: scale(1.015);
+      filter: grayscale(0%);
+      transform: scale(1.02);
     }
 
     /* scattered layout */
@@ -205,7 +204,6 @@
         const imgCenter = rect.top + rect.height / 2;
         const distance = Math.abs(center - imgCenter);
 
-        /* 🔥 wider range = smoother transition */
         if (distance < window.innerHeight * 0.35) {
           img.classList.add('active');
         } else {
