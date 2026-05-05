@@ -53,26 +53,59 @@
     }
 
     .about {
-      padding: 10vh 32px 18vh;
-      max-width: 760px;
+      padding: 8vh 32px 18vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      max-width: 1150px;
     }
 
-    .about p {
+    .about h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -2px;
+      font-size: clamp(34px, 5vw, 70px);
+      line-height: 1.02;
+      letter-spacing: -2.4px;
+      font-weight: 300;
+    }
+
+    .about-copy {
+      padding-top: 12px;
+      max-width: 480px;
+    }
+
+    .about-copy p {
+      margin: 0 0 24px;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     .work {
+      position: relative;
       padding: 10vh 32px 20vh;
+      overflow: hidden;
+    }
+
+    .work-bg-text {
+      position: sticky;
+      top: 38vh;
+      margin-bottom: -130px;
+      z-index: 0;
+      font-size: clamp(70px, 13vw, 210px);
+      line-height: 0.85;
+      letter-spacing: -8px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.055);
+      pointer-events: none;
+      white-space: nowrap;
     }
 
     .work img {
+      position: relative;
+      z-index: 2;
       display: block;
       height: auto;
       filter: grayscale(100%) brightness(0.82);
-      opacity: 0.38;
+      opacity: 0.42;
       transition: filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
     }
 
@@ -82,15 +115,15 @@
       transform: scale(1.025);
     }
 
-    .img1 { width: 26%; margin-left: 8%; margin-bottom: 260px; }
-    .img2 { width: 20%; margin-left: auto; margin-right: 14%; margin-bottom: 310px; }
-    .img3 { width: 32%; margin-left: 46%; margin-bottom: 250px; }
-    .img4 { width: 18%; margin-left: 18%; margin-bottom: 350px; }
-    .img5 { width: 28%; margin-left: auto; margin-right: 8%; margin-bottom: 280px; }
-    .img6 { width: 22%; margin-left: 36%; margin-bottom: 330px; }
-    .img7 { width: 34%; margin-left: 5%; margin-bottom: 250px; }
-    .img8 { width: 20%; margin-left: auto; margin-right: 24%; margin-bottom: 330px; }
-    .img9 { width: 30%; margin-left: 50%; }
+    .img1 { width: 34%; margin-left: 6%; margin-bottom: 240px; }
+    .img2 { width: 28%; margin-left: auto; margin-right: 12%; margin-bottom: 280px; }
+    .img3 { width: 40%; margin-left: 42%; margin-bottom: 230px; }
+    .img4 { width: 26%; margin-left: 16%; margin-bottom: 320px; }
+    .img5 { width: 36%; margin-left: auto; margin-right: 8%; margin-bottom: 250px; }
+    .img6 { width: 30%; margin-left: 34%; margin-bottom: 300px; }
+    .img7 { width: 42%; margin-left: 5%; margin-bottom: 240px; }
+    .img8 { width: 28%; margin-left: auto; margin-right: 22%; margin-bottom: 300px; }
+    .img9 { width: 38%; margin-left: 48%; }
 
     .contact {
       padding: 90px 32px 70px;
@@ -134,18 +167,32 @@
 
       .about {
         padding: 8vh 24px 12vh;
+        display: block;
       }
 
-      .about p {
-        font-size: 34px;
+      .about h2 {
+        font-size: 38px;
+        letter-spacing: -1.6px;
+        margin-bottom: 34px;
+      }
+
+      .about-copy p {
+        font-size: 15px;
       }
 
       .work {
         padding: 6vh 24px 12vh;
       }
 
+      .work-bg-text {
+        top: 42vh;
+        font-size: 74px;
+        letter-spacing: -3px;
+        margin-bottom: -70px;
+      }
+
       .work img {
-        width: 70% !important;
+        width: 78% !important;
         margin-bottom: 120px !important;
       }
 
@@ -175,12 +222,28 @@
   </section>
 
   <section class="about" id="about">
-    <p>
-      Residential interiors shaped by light, material restraint and considered detail.
-    </p>
+    <h2>
+      Interior design shaped by light, material restraint and considered detail.
+    </h2>
+
+    <div class="about-copy">
+      <p>
+        Sienna Marie is an Auckland-based interior designer working across residential interiors, styling and spatial concepts.
+      </p>
+
+      <p>
+        Her work is grounded in atmosphere, proportion and materiality — creating spaces that feel refined, calm and quietly elevated.
+      </p>
+
+      <p>
+        With a background spanning interior design, furniture, styling and high-end residential detailing, Sienna approaches each project with a focus on spatial flow, natural light and thoughtful finishes.
+      </p>
+    </div>
   </section>
 
   <section class="work" id="work">
+    <div class="work-bg-text">Sienna Marie</div>
+
     <img class="gallery-img img1" src="hero.JPG" alt="">
     <img class="gallery-img img2" src="img1.JPG" alt="">
     <img class="gallery-img img3" src="img2.JPG" alt="">
@@ -209,7 +272,7 @@
         const imgCenter = rect.top + rect.height / 2;
         const distance = Math.abs(center - imgCenter);
 
-        if (distance < window.innerHeight * 0.22) {
+        if (distance < window.innerHeight * 0.24) {
           img.classList.add('active');
         } else {
           img.classList.remove('active');
