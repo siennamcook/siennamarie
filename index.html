@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Sienna Marie Interior Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +17,6 @@
       font-family: 'Inter', sans-serif;
       background: #f6f3ee;
       color: #111;
-      font-weight: 300;
     }
 
     nav {
@@ -35,7 +33,6 @@
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      font-weight: 300;
     }
 
     .intro {
@@ -47,8 +44,7 @@
 
     .intro h1 {
       margin: 0;
-      max-width: 950px;
-      font-size: clamp(58px, 11vw, 160px);
+      font-size: clamp(60px, 11vw, 160px);
       line-height: 0.9;
       letter-spacing: -7px;
       font-weight: 200;
@@ -71,7 +67,6 @@
     }
 
     .about-copy {
-      padding-top: 12px;
       max-width: 480px;
     }
 
@@ -84,23 +79,19 @@
     .work {
       position: relative;
       padding: 8vh 32px 20vh;
-      z-index: 2;
-      overflow: visible;
     }
 
     .work-bg-text {
       position: sticky;
       top: 42vh;
-      z-index: 0;
-      margin-bottom: -120px;
       text-align: center;
       font-size: clamp(90px, 14vw, 240px);
-      line-height: 0.85;
       letter-spacing: -10px;
       font-weight: 200;
-      color: rgba(0, 0, 0, 0.05);
+      color: rgba(0,0,0,0.05);
+      margin-bottom: -120px;
       pointer-events: none;
-      white-space: nowrap;
+      z-index: 0;
     }
 
     .work img {
@@ -108,8 +99,18 @@
       z-index: 3;
       display: block;
       height: auto;
+
+      /* 🔥 softer grayscale */
+      filter: grayscale(100%) saturate(80%);
+      transition: filter 1.2s ease, transform 1.2s ease;
     }
 
+    .work img.active {
+      filter: grayscale(0%) saturate(105%);
+      transform: scale(1.015);
+    }
+
+    /* scattered layout */
     .img1 { width: 52%; margin-left: 4%; margin-bottom: 220px; }
     .img2 { width: 42%; margin-left: auto; margin-right: 10%; margin-bottom: 300px; }
     .img3 { width: 58%; margin-left: 34%; margin-bottom: 180px; }
@@ -123,13 +124,9 @@
     .contact {
       padding: 90px 32px 70px;
       border-top: 1px solid rgba(0,0,0,0.12);
-      background: #f6f3ee;
-      z-index: 5;
-      position: relative;
     }
 
     .contact p {
-      margin: 0 0 20px;
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -137,73 +134,22 @@
 
     .contact a {
       display: block;
-      color: #111;
-      text-decoration: none;
       font-size: 20px;
-      line-height: 1.5;
+      text-decoration: none;
+      color: #111;
     }
 
     @media (max-width: 800px) {
-      nav {
-        top: 22px;
-        right: 22px;
-      }
-
-      nav a {
-        margin-left: 14px;
-        font-size: 10px;
-      }
-
-      .intro {
-        padding: 24px;
-      }
-
-      .intro h1 {
-        font-size: 64px;
-        letter-spacing: -3px;
-      }
-
-      .about {
-        display: block;
-        padding: 8vh 24px;
-      }
-
-      .about h2 {
-        font-size: 38px;
-        margin-bottom: 30px;
-      }
-
-      .about-copy p {
-        font-size: 15px;
-      }
-
-      .work {
-        padding: 6vh 24px;
-      }
-
-      .work-bg-text {
-        top: 43vh;
-        font-size: 80px;
-        letter-spacing: -4px;
-        margin-bottom: -60px;
-      }
+      .about { display: block; padding: 8vh 24px; }
+      .about h2 { font-size: 38px; margin-bottom: 30px; }
 
       .work img {
         width: 88% !important;
         margin-bottom: 120px !important;
       }
 
-      .work img:nth-of-type(odd) {
-        margin-left: 0 !important;
-      }
-
-      .work img:nth-of-type(even) {
-        margin-left: auto !important;
-      }
-
-      .contact {
-        padding: 70px 24px;
-      }
+      .work img:nth-child(odd) { margin-left: 0 !important; }
+      .work img:nth-child(even) { margin-left: auto !important; }
     }
   </style>
 </head>
@@ -221,37 +167,25 @@
   </section>
 
   <section class="about" id="about">
-    <h2>
-      Interior design shaped by light, material restraint and considered detail.
-    </h2>
-
+    <h2>Interior design shaped by light, material restraint and considered detail.</h2>
     <div class="about-copy">
-      <p>
-        Sienna Marie is an Auckland-based interior designer working across residential interiors, styling and spatial concepts.
-      </p>
-
-      <p>
-        Her work is grounded in atmosphere, proportion and materiality — creating spaces that feel refined, calm and quietly elevated.
-      </p>
-
-      <p>
-        With a background spanning interior design, furniture, styling and high-end residential detailing, Sienna approaches each project with a focus on spatial flow, natural light and thoughtful finishes.
-      </p>
+      <p>Sienna Marie is an Auckland-based interior designer working across residential interiors, styling and spatial concepts.</p>
+      <p>Her work is grounded in atmosphere, proportion and materiality — creating spaces that feel refined and calm.</p>
     </div>
   </section>
 
   <section class="work" id="work">
     <div class="work-bg-text">Sienna Marie</div>
 
-    <img class="img1" src="hero.JPG" alt="">
-    <img class="img2" src="img1.JPG" alt="">
-    <img class="img3" src="img2.JPG" alt="">
-    <img class="img4" src="img3.JPG" alt="">
-    <img class="img5" src="img4.JPG" alt="">
-    <img class="img6" src="img5.JPG" alt="">
-    <img class="img7" src="img6.JPG" alt="">
-    <img class="img8" src="img7.JPG" alt="">
-    <img class="img9" src="img8.JPG" alt="">
+    <img class="gallery-img img1" src="hero.JPG">
+    <img class="gallery-img img2" src="img1.JPG">
+    <img class="gallery-img img3" src="img2.JPG">
+    <img class="gallery-img img4" src="img3.JPG">
+    <img class="gallery-img img5" src="img4.JPG">
+    <img class="gallery-img img6" src="img5.JPG">
+    <img class="gallery-img img7" src="img6.JPG">
+    <img class="gallery-img img8" src="img7.JPG">
+    <img class="gallery-img img9" src="img8.JPG">
   </section>
 
   <section class="contact" id="contact">
@@ -259,6 +193,30 @@
     <a href="mailto:siennacmarie@gmail.com">siennacmarie@gmail.com</a>
     <a href="tel:+64223597311">+64 22 359 7311</a>
   </section>
+
+  <script>
+    const images = document.querySelectorAll('.gallery-img');
+
+    function updateImages() {
+      const center = window.innerHeight / 2;
+
+      images.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const imgCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(center - imgCenter);
+
+        /* 🔥 wider range = smoother transition */
+        if (distance < window.innerHeight * 0.35) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateImages);
+    window.addEventListener('load', updateImages);
+  </script>
 
 </body>
 </html>
