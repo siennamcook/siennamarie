@@ -43,21 +43,26 @@ nav a {
   align-items: center;
 }
 
+.hero-text {
+  max-width: 1100px;
+}
+
 .hero-text h1 {
   margin: 0;
-  font-size: clamp(70px, 12vw, 170px);
+  font-size: clamp(62px, 10.5vw, 158px);
   line-height: 0.9;
-  letter-spacing: -6px;
+  letter-spacing: 2px;
   font-weight: 200;
+  text-transform: uppercase;
 }
 
 .hero-text h2 {
-  margin: 10px 0 0;
-  font-size: clamp(14px, 2vw, 22px);
-  letter-spacing: 6px;
+  margin: 18px 0 0 8px;
+  font-size: clamp(12px, 1.6vw, 18px);
+  letter-spacing: 8px;
   text-transform: uppercase;
   font-weight: 300;
-  opacity: 0.7;
+  opacity: 0.62;
 }
 
 /* ABOUT */
@@ -98,8 +103,9 @@ nav a {
   top: 42vh;
   text-align: center;
   font-size: clamp(90px, 14vw, 240px);
-  letter-spacing: -10px;
+  letter-spacing: 6px;
   font-weight: 200;
+  text-transform: uppercase;
   color: rgba(0,0,0,0.05);
   margin-bottom: -120px;
   pointer-events: none;
@@ -112,8 +118,6 @@ nav a {
   z-index: 3;
   display: block;
   height: auto;
-
-  /* BLACK & WHITE */
   filter: grayscale(1);
   transition: filter 1.2s ease, transform 1.2s ease;
 }
@@ -155,7 +159,40 @@ nav a {
 
 /* MOBILE */
 @media (max-width: 800px) {
-  .about { display: block; padding: 8vh 24px; }
+  nav {
+    top: 22px;
+    right: 22px;
+  }
+
+  nav a {
+    margin-left: 14px;
+    font-size: 10px;
+  }
+
+  .intro {
+    padding: 24px;
+  }
+
+  .hero-text h1 {
+    font-size: 54px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-text h2 {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 5px;
+  }
+
+  .about {
+    display: block;
+    padding: 8vh 24px;
+  }
+
+  .about h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
 
   .work img {
     width: 88% !important;
@@ -164,6 +201,11 @@ nav a {
 
   .work img:nth-child(odd) { margin-left: 0 !important; }
   .work img:nth-child(even) { margin-left: auto !important; }
+
+  .work-bg-text {
+    font-size: 80px;
+    letter-spacing: 3px;
+  }
 }
 </style>
 </head>
@@ -178,8 +220,8 @@ nav a {
 
 <section class="intro">
   <div class="hero-text">
-    <h1>Sienna Marie</h1>
-    <h2>Interior Design</h2>
+    <h1>SIENNA MARIE</h1>
+    <h2>INTERIOR DESIGN</h2>
   </div>
 </section>
 
@@ -192,7 +234,7 @@ nav a {
 </section>
 
 <section class="work" id="work">
-  <div class="work-bg-text">Sienna Marie</div>
+  <div class="work-bg-text">SIENNA MARIE</div>
 
   <img class="gallery-img img1" src="hero.JPG">
   <img class="gallery-img img2" src="img1.JPG">
