@@ -4,32 +4,33 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f7f4ef;
-  color: #111;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background: #f6f3ee;
+  color: #151515;
   font-weight: 300;
 }
 
-/* HEADER */
-
-.header {
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 26px 36px;
+  z-index: 50;
+  padding: 26px 34px;
   display: flex;
   justify-content: space-between;
-  z-index: 10;
+  align-items: center;
+  background: rgba(246, 243, 238, 0.88);
+  backdrop-filter: blur(8px);
 }
 
-.logo,
+.brand,
 nav a {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #111;
+  color: #151515;
 }
 
 nav {
@@ -37,127 +38,128 @@ nav {
   gap: 26px;
 }
 
-/* HERO */
-
 .hero {
-  height: 100vh;
-  padding: 80px 36px 36px;
+  padding: 92px 34px 40px;
 }
 
 .hero img {
   width: 100%;
-  height: 100%;
+  height: 78vh;
   object-fit: cover;
+  display: block;
 }
-
-/* ABOUT */
 
 .about {
-  padding: 120px 36px 100px;
-  max-width: 1000px;
+  padding: 120px 34px 90px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
 }
 
-.about-large {
-  margin: 0 0 50px;
-  font-size: clamp(34px, 5vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -2px;
+.about h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 66px);
+  line-height: 1.02;
+  font-weight: 300;
+  letter-spacing: -2.2px;
 }
 
-.about-small {
-  max-width: 520px;
-  font-size: 17px;
-  line-height: 1.6;
+.about p {
+  margin: 10px 0 0;
+  max-width: 440px;
+  font-size: 16px;
+  line-height: 1.65;
 }
-
-/* WORK (SCATTERED) */
 
 .work {
-  padding: 40px 36px 120px;
+  padding: 20px 34px 140px;
   display: flex;
   flex-direction: column;
 }
 
 .work img {
   display: block;
-  width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
-/* SCATTER LAYOUT */
-
-.work img:nth-child(1) {
-  width: 60%;
+.one {
+  width: 54%;
   margin-bottom: 120px;
 }
 
-.work img:nth-child(2) {
-  width: 38%;
+.two {
+  width: 34%;
   margin-left: auto;
+  margin-right: 8%;
   margin-bottom: 80px;
 }
 
-.work img:nth-child(3) {
-  width: 50%;
+.three {
+  width: 44%;
   margin-left: 12%;
-  margin-bottom: 150px;
+  margin-bottom: 140px;
 }
 
-.work img:nth-child(4) {
-  width: 34%;
+.four {
+  width: 30%;
   margin-left: auto;
   margin-bottom: 110px;
 }
 
-.work img:nth-child(5) {
-  width: 65%;
+.five {
+  width: 58%;
+  margin-left: 4%;
   margin-bottom: 90px;
 }
 
-.work img:nth-child(6) {
-  width: 42%;
+.six {
+  width: 36%;
   margin-left: auto;
-  margin-bottom: 140px;
+  margin-right: 14%;
+  margin-bottom: 130px;
 }
 
-.work img:nth-child(7) {
-  width: 55%;
+.seven {
+  width: 48%;
   margin-bottom: 100px;
 }
 
-.work img:nth-child(8) {
-  width: 45%;
+.eight {
+  width: 38%;
   margin-left: auto;
 }
 
-/* CONTACT */
-
 .contact {
-  padding: 80px 36px 60px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 80px 34px 70px;
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
 
 .contact p {
-  font-size: 12px;
+  margin: 0 0 22px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
 }
 
 .contact a {
   display: block;
-  font-size: 20px;
+  width: fit-content;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #151515;
   text-decoration: none;
-  color: #111;
-  margin-bottom: 8px;
 }
 
-/* MOBILE */
-
 @media (max-width: 800px) {
-
-  .header {
+  header {
     padding: 20px;
+  }
+
+  .brand,
+  nav a {
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
   nav {
@@ -165,40 +167,44 @@ nav {
   }
 
   .hero {
-    padding: 70px 20px 20px;
-    height: 80vh;
+    padding: 76px 20px 30px;
+  }
+
+  .hero img {
+    height: 62vh;
   }
 
   .about {
-    padding: 80px 20px;
+    padding: 80px 20px 70px;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .about-large {
+  .about h1 {
     font-size: 36px;
+    letter-spacing: -1.4px;
   }
 
   .work {
-    padding: 20px;
+    padding: 10px 20px 90px;
   }
 
   .work img {
-    width: 85% !important;
-    margin-bottom: 50px !important;
+    width: 82% !important;
+    margin-bottom: 55px !important;
   }
 
   .work img:nth-child(odd) {
     margin-left: 0 !important;
+    margin-right: auto !important;
   }
 
   .work img:nth-child(even) {
     margin-left: auto !important;
+    margin-right: 0 !important;
   }
 
   .contact {
-    padding: 60px 20px;
-  }
-
-  .contact a {
-    font-size: 18px;
+    padding: 65px 20px;
   }
 }
