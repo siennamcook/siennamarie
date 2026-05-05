@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Sienna Marie Interior Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -86,15 +89,16 @@
     }
 
     .work-bg-text {
-      position: sticky;
-      top: 38vh;
-      margin-bottom: -130px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 0;
-      font-size: clamp(70px, 13vw, 210px);
+      font-size: clamp(80px, 13vw, 220px);
       line-height: 0.85;
       letter-spacing: -8px;
       font-weight: 300;
-      color: rgba(0, 0, 0, 0.055);
+      color: rgba(0, 0, 0, 0.05);
       pointer-events: none;
       white-space: nowrap;
     }
@@ -115,19 +119,22 @@
       transform: scale(1.025);
     }
 
-    .img1 { width: 34%; margin-left: 6%; margin-bottom: 240px; }
-    .img2 { width: 28%; margin-left: auto; margin-right: 12%; margin-bottom: 280px; }
-    .img3 { width: 40%; margin-left: 42%; margin-bottom: 230px; }
-    .img4 { width: 26%; margin-left: 16%; margin-bottom: 320px; }
-    .img5 { width: 36%; margin-left: auto; margin-right: 8%; margin-bottom: 250px; }
-    .img6 { width: 30%; margin-left: 34%; margin-bottom: 300px; }
-    .img7 { width: 42%; margin-left: 5%; margin-bottom: 240px; }
-    .img8 { width: 28%; margin-left: auto; margin-right: 22%; margin-bottom: 300px; }
-    .img9 { width: 38%; margin-left: 48%; }
+    .img1 { width: 46%; margin-left: 5%; margin-bottom: 220px; }
+    .img2 { width: 38%; margin-left: auto; margin-right: 8%; margin-bottom: 260px; }
+    .img3 { width: 52%; margin-left: 36%; margin-bottom: 220px; }
+    .img4 { width: 36%; margin-left: 14%; margin-bottom: 290px; }
+    .img5 { width: 48%; margin-left: auto; margin-right: 5%; margin-bottom: 230px; }
+    .img6 { width: 40%; margin-left: 30%; margin-bottom: 270px; }
+    .img7 { width: 54%; margin-left: 4%; margin-bottom: 220px; }
+    .img8 { width: 38%; margin-left: auto; margin-right: 18%; margin-bottom: 270px; }
+    .img9 { width: 50%; margin-left: 44%; }
 
     .contact {
       padding: 90px 32px 70px;
       border-top: 1px solid rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 5;
+      background: #f6f3ee;
     }
 
     .contact p {
@@ -185,14 +192,12 @@
       }
 
       .work-bg-text {
-        top: 42vh;
-        font-size: 74px;
+        font-size: 76px;
         letter-spacing: -3px;
-        margin-bottom: -70px;
       }
 
       .work img {
-        width: 78% !important;
+        width: 86% !important;
         margin-bottom: 120px !important;
       }
 
@@ -204,6 +209,10 @@
       .work img:nth-child(even) {
         margin-left: auto !important;
         margin-right: 0 !important;
+      }
+
+      .contact {
+        padding: 70px 24px;
       }
     }
   </style>
